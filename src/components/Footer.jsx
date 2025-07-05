@@ -19,10 +19,10 @@ const Footer = () => {
 
           {/* Footer Text */}
           <div className="text-center">
-            <p className="text-gray-300 mb-2">
+            <p className="text-gray-300 mb-2 text-sm">
               © 2025 Om Shukla. All rights reserved <span className='text-gray-500'>(Probably?)</span>.
             </p>
-            <p className="text-sm text-gray-400 flex items-center justify-center">
+            <p className="md:text-sm text-xs text-gray-400 flex items-center justify-center">
               Made with <Heart size={16} className="text-red-500 mx-1" />,Sweat and Tears using React & Tailwind CSS
             </p>
           </div>

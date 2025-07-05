@@ -61,7 +61,7 @@ export default function Skills() {
         {skills.map((skill, index) => (
           <div
             key={index}
-            className={`min-w-[180px] h-[120px] flex flex-col items-center justify-evenly rounded-xl text-lg group transition-all duration-300 ${
+            className={`min-w-[120px] md:min-w-[180px] h-[120px] flex flex-col items-center justify-evenly rounded-xl text-lg group transition-all duration-300 ${
               isDarkMode ? 'bg-[#1e293b] text-white' : 'bg-white text-gray-900 border-r-4 border-r-gray-200 border-b-4 border-b-gray-200'
             }`}
           >

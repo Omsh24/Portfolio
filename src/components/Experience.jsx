@@ -57,7 +57,7 @@ const Experience = () => {
         {/* Timeline */}
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-500 to-secondary-500"></div>
+          <div className="hidden md:block lg:block absolute left-4 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-500 to-secondary-500"></div>
 
           {experiences.map((exp, index) => (
             <div
@@ -66,7 +66,7 @@ const Experience = () => {
               data-animate
               className={`relative mb-12 ${
                 animatedElements.has(`experience-${exp.id}`) 
-                  ? index % 2 === 0 ? 'animate-slide-in-left ml-10' : 'animate-slide-in-right mr-10'
+                  ? index % 2 === 0 ? 'animate-slide-in-left md:ml-10' : 'animate-slide-in-right md:mr-10'
                   : 'opacity-0'
               }`}
               style={{ animationDelay: `${index * 0.2}s` }}
@@ -75,10 +75,10 @@ const Experience = () => {
                 index % 2 === 0 ? 'md:flex-row-reverse' : ''
               }`}>
                 {/* Timeline Dot */}
-                <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 -translate-y-1 w-3 h-3 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
+                <div className="absolute opacity-0 md:opacity-100 left-4 md:left-1/2 transform md:-translate-x-1/2 -translate-y-1 w-3 h-3 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
 
                 {/* Content */}
-                <div className={`w-full md:w-1/2 ml-12 md:ml-0 ${
+                <div className={`w-full md:w-1/2 md:ml-0 ${
                   index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'
                 }`}>
                   <div className="glass-card group hover:scale-105 transition-all duration-300">

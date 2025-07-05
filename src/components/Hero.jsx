@@ -80,14 +80,14 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-20 text-center text-white px-4 sm:px-6 lg:px-8">
         <div className="animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-shadow">
+          <h1 className="text-4xl md:text-7xl font-bold mb-6 text-shadow">
             Hi, I'm{' '}
             <span className="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
               Om Shukla
             </span>
           </h1>
           
-          <div className="text-3xl md:text-4xl font-bold mb-6 text-shadow">
+          <div className="text-2xl md:text-4xl font-bold mb-6 text-shadow">
             I'm a {' '}
             <span className="bg-gradient-to-r from-primary-300 to-secondary-300 bg-clip-text text-transparent">
               <Typewriter 
@@ -102,7 +102,7 @@ const Hero = () => {
             </span>
           </div>
 
-          <div className="flex flex-row sm:flex-row gap-4 justify-center items-center animate-slide-up animation-delay-400">
+          <div className="flex md:flex-row flex-col gap-4 justify-center items-center animate-slide-up animation-delay-400">
             <button 
               onClick={() => document.querySelector('#projects').scrollIntoView({ behavior: 'smooth' })}
               className='btn'
