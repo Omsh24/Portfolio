@@ -109,7 +109,7 @@ function TicTacToe() {
       <div className={`grid grid-cols-10 grid-rows-10 border-2`} ref={gridRef} tabIndex={0} onKeyDown={dirChange}>
         {
           grid.map((g, i) => (
-            <div key={i} className={`border-1 bg-opacity-80 border-blue-500 md:w-[25px] md:h-[25px] w-[15px] h-[15px] flex justify-center items-center 
+            <div key={i} className={`border-1 bg-opacity-80 border-blue-500 md:w-[25px] md:h-[25px] w-[25px] h-[25px] flex justify-center items-center 
               ${i == (head[0] * rows + head[1]) ? `bg-blue-600 ${borderdecider()}` : ''}
               ${(food[0] == -1 || food[1] == -1) ? '' : i === (food[0] * rows + food[1]) ? 'bg-red-500 rounded-full' : ''}
               ${body.includes(i) ? 'bg-blue-400 rounded-md' : ''}
@@ -130,11 +130,11 @@ function TicTacToe() {
 
         <div className='flex flex-row font-semibold text-2xl'>
           <div>Score:</div>
-          <div>{score}</div>
+          <div>{score >= 1 ? score - 1 : 0}</div>
         </div>
       </div>
 
-      <div className="mt-6 sm:hidden flex flex-col items-center gap-3">
+      <div className="mt-6 sm:hidden flex flex-col items-center gap-3 text-2xl">
         <button onClick={() => handleTouchDir('w')} className="arrow-button">↑</button>
         <div className="flex gap-3">
           <button onClick={() => handleTouchDir('a')} className="arrow-button">←</button>

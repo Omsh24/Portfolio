@@ -154,7 +154,7 @@ const Hero = () => {
         }
 
         <button onClick={() => setGame(!game)}>
-          Bored ?
+          {game ? `Bored ?` : `Return`}
         </button>
       </div>
 
