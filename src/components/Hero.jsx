@@ -3,9 +3,11 @@ import { ChevronDown, Download, Mail, Github, Linkedin, Code } from 'lucide-reac
 import { Typewriter } from 'react-simple-typewriter'
 import { TbBrandLeetcode } from "react-icons/tb";
 import { SiCodechef } from "react-icons/si";
+import TicTacToe from '../components/Tictactoe'
 
 const Hero = () => {
   const [parallaxOffset, setParallaxOffset] = useState(0);
+  const [game, setGame] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,7 +40,7 @@ const Hero = () => {
       icon: Github,
       label: 'GitHub',
       href: 'https://github.com/Omsh24',
-      color: 'hover:text-gray-800 dark:hover:text-gray-200',
+      color: 'text-white',
     },
     {
       icon: SiCodechef,
@@ -79,69 +81,81 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-20 text-center text-white px-4 sm:px-6 lg:px-8">
-        <div className="animate-fade-in">
-          <h1 className="text-4xl md:text-7xl font-bold mb-6 text-shadow">
-            Hi, I'm{' '}
-            <span className="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
-              Om Shukla
-            </span>
-          </h1>
-          
-          <div className="text-2xl md:text-4xl font-bold mb-6 text-shadow">
-            I'm a {' '}
-            <span className="bg-gradient-to-r from-primary-300 to-secondary-300 bg-clip-text text-transparent">
-              <Typewriter 
-                words={["Software Developer", "Fullstack Developer", "DSA Enthusiast"]}
-                loop={false}
-                cursor
-                cursorStyle='_'
-                typeSpeed={70}
-                deleteSpeed={50}
-                delaySpeed={1000}
-              />
-            </span>
-          </div>
+        {
+          game &&
+          <div className="animate-fade-in">
+            <h1 className="text-4xl md:text-7xl font-bold mb-6 text-shadow">
+              Hi, I'm{' '}
+              <span className="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
+                Om Shukla
+              </span>
+            </h1>
+            
+            <div className="text-2xl md:text-4xl font-bold mb-6 text-shadow">
+              I'm a {' '}
+              <span className="bg-gradient-to-r from-primary-300 to-secondary-300 bg-clip-text text-transparent">
+                <Typewriter 
+                  words={["Software Developer", "Fullstack Developer", "DSA Enthusiast"]}
+                  loop={false}
+                  cursor
+                  cursorStyle='_'
+                  typeSpeed={70}
+                  deleteSpeed={50}
+                  delaySpeed={1000}
+                />
+              </span>
+            </div>
 
-          <div className="flex md:flex-row flex-col gap-4 justify-center items-center animate-slide-up animation-delay-400">
-            <button 
-              onClick={() => document.querySelector('#projects').scrollIntoView({ behavior: 'smooth' })}
-              className='btn'
-            >
-              View My Work
-              <ChevronDown size={20} className="ml-2 group-hover:translate-y-1 transition-transform" />
-            </button>
+            <div className="flex md:flex-row flex-col gap-4 justify-center items-center animate-slide-up animation-delay-400">
+              <button 
+                onClick={() => document.querySelector('#projects').scrollIntoView({ behavior: 'smooth' })}
+                className='btn'
+              >
+                View My Work
+                <ChevronDown size={20} className="ml-2 group-hover:translate-y-1 transition-transform" />
+              </button>
 
-            <a className="btn1" target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1uffzv3duwIfCOjgvCUfrDtpIh8lnBBHP/view?usp=sharing">
-              <Download size={20} className="mr-2 group-hover:scale-110 transition-transform" />
-              Download Resume
-            </a>
+              <a className="btn1" target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1uffzv3duwIfCOjgvCUfrDtpIh8lnBBHP/view?usp=sharing">
+                <Download size={20} className="mr-2 group-hover:scale-110 transition-transform" />
+                Download Resume
+              </a>
 
-            <button onClick={() => document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })} className="btn2">
-              <Mail size={20} className="mr-2 group-hover:scale-110 transition-transform" />
-              Get In Touch
-            </button>
-          </div>
+              <button onClick={() => document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })} className="btn2">
+                <Mail size={20} className="mr-2 group-hover:scale-110 transition-transform" />
+                Get In Touch
+              </button>
+            </div>
 
-          <div className="flex mt-10 flex-row sm:flex-row gap-4 justify-center items-center animate-slide-up animation-delay-400">
-            <div className="flex space-x-4">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`group p-3 border-2 border-gray-200 rounded-full bg-transparent transition-all duration-300 hover:scale-110 hover:shadow-lg ${social.color} hover:bg-current`}
-                >
-                  <social.icon
-                    size={24}
-                    className="transition-all duration-300 group-hover:text-black"
-                  />
-                </a>
-              ))}
+            <div className="flex mt-10 flex-row sm:flex-row gap-4 justify-center items-center animate-slide-up animation-delay-400">
+              <div className="flex space-x-4">
+                {socialLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`group p-3 border-2 border-gray-200 rounded-full bg-transparent transition-all duration-300 hover:scale-110 hover:shadow-lg ${social.color} hover:bg-current`}
+                  >
+                    <social.icon
+                      size={24}
+                      className="transition-all duration-300 group-hover:text-black"
+                    />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
+        }
+        {
+          !game &&
+          <div className=''>
+            <TicTacToe />
+          </div>
+        }
 
-        </div>
+        <button onClick={() => setGame(!game)}>
+          Bored ?
+        </button>
       </div>
 
       {/* Scroll indicator */}
