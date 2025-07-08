@@ -115,7 +115,7 @@ const Hero = () => {
                 <ChevronDown size={20} className="ml-2 group-hover:translate-y-1 transition-transform" />
               </button>
 
-              <a className="btn1" target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1uffzv3duwIfCOjgvCUfrDtpIh8lnBBHP/view?usp=sharing">
+              <a className="btn1" target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1ZUJ7PJV3ltmtzlh7PtDg1H0jMckKsHH1/view?usp=sharing">
                 <Download size={20} className="mr-2 group-hover:scale-110 transition-transform" />
                 Download Resume
               </a>
